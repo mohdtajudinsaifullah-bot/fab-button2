@@ -26,11 +26,11 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #28a745; /* hijau = warna telefon */
+      background: #fff; /* putih */
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
+      color: #28a745; /* hijau utk ikon telefon */
       font-size: 24px;
       cursor: pointer;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
@@ -62,11 +62,10 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #007bff;
+      background: #fff; /* putih */
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
       font-size: 20px;
       text-decoration: none;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
@@ -74,9 +73,13 @@
     }
 
     .fab-options a:hover {
-      background: #0056b3;
       transform: scale(1.1);
     }
+
+    /* warna ikon ikut jenis */
+    .fab-options a.email { color: #d93025; }     /* merah Gmail */
+    .fab-options a.whatsapp { color: #25D366; }  /* hijau WhatsApp */
+    .fab-options a.phone { color: #007bff; }     /* biru Telefon */
   </style>
 </head>
 <body>
@@ -87,11 +90,11 @@
     <!-- Ikon tambahan -->
     <div class="fab-options">
       <!-- Emel -->
-      <a href="mailto:sulhjksm@esyariah.gov.my"><i class="fa fa-envelope"></i></a>
+      <a href="mailto:sulhjksm@esyariah.gov.my" class="email"><i class="fa fa-envelope"></i></a>
       <!-- WhatsApp -->
-      <a href="https://wa.me/60193718243" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://wa.me/60193718243" target="_blank" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
       <!-- Telefon -->
-      <a href="tel:+60388709279"><i class="fa fa-headset"></i></a>
+      <a href="tel:+60388709279" class="phone"><i class="fa fa-headset"></i></a>
     </div>
   </div>
 

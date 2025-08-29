@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAB Horizontal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      background: #f4f4f4;
+    }
+
+    .fab-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .fab {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #007bff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .fab:hover {
+      transform: rotate(45deg);
+    }
+
+    .fab-options {
+      display: flex;
+      flex-direction: row; /* tukar jadi horizontal */
+      position: absolute;
+      bottom: 0;
+      right: 70px; /* jarak dari butang utama */
+      gap: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .fab-container.active .fab-options {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .fab-options a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #28a745;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .fab-options a:hover {
+      background: #218838;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="fab-container">
+    <div class="fab"><i class="fa fa-plus"></i></div>
+    <div class="fab-options">
+      <a href="tel:+60388709279"><i class="fa fa-phone"></i></a>
+      <a href="mailto:sulhjksm@esyariah.gov.my"><i class="fa fa-envelope"></i></a>
+      <a href="https://wa.me/60193718243" target="_blank"><i class="fa fa-brands fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector(".fab").addEventListener("click", function() {
+      document.querySelector(".fab-container").classList.toggle("active");
+    });
+  </script>
+</body>
+</html>

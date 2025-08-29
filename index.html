@@ -26,7 +26,7 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: #007bff;
+      background: #28a745; /* hijau = warna telefon */
       display: flex;
       justify-content: center;
       align-items: center;
@@ -38,15 +38,15 @@
     }
 
     .fab:hover {
-      transform: rotate(45deg);
+      transform: scale(1.1);
     }
 
     .fab-options {
       display: flex;
-      flex-direction: row; /* tukar jadi horizontal */
+      flex-direction: row;
       position: absolute;
       bottom: 0;
-      right: 70px; /* jarak dari butang utama */
+      right: 70px;
       gap: 10px;
       opacity: 0;
       pointer-events: none;
@@ -62,7 +62,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: #28a745;
+      background: #007bff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,18 +74,24 @@
     }
 
     .fab-options a:hover {
-      background: #218838;
+      background: #0056b3;
       transform: scale(1.1);
     }
   </style>
 </head>
 <body>
   <div class="fab-container">
-    <div class="fab"><i class="fa fa-plus"></i></div>
+    <!-- Ikon utama telefon -->
+    <div class="fab"><i class="fa fa-phone"></i></div>
+
+    <!-- Ikon tambahan -->
     <div class="fab-options">
-      <a href="tel:+60388709279"><i class="fa fa-phone"></i></a>
+      <!-- Emel -->
       <a href="mailto:sulhjksm@esyariah.gov.my"><i class="fa fa-envelope"></i></a>
-      <a href="https://wa.me/60193718243" target="_blank"><i class="fa fa-brands fa-whatsapp"></i></a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/60193718243" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <!-- Telefon -->
+      <a href="tel:+60388709279"><i class="fa fa-headset"></i></a>
     </div>
   </div>
 

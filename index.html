@@ -1,28 +1,24 @@
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- Font Awesome (via jsDelivr, lebih stabil untuk Google Sites) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
 <style>
-  body {
-    background: #ffffff !important;
-  }
-
   .fab-container {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* pindah ke kanan */
+    right: 20px; /* ikon utama di kanan bawah */
     z-index: 1000;
   }
 
   .fab {
     width: 60px;
     height: 60px;
-    background: #25d366;
+    background: #25d366; /* hijau WhatsApp */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
@@ -72,22 +68,17 @@
 
 <div class="fab-container" id="fab-container">
   <div class="fab fab-icon-holder">
-    <i class="fas fa-phone"></i>
+    <i class="fa-brands fa-whatsapp"></i>
   </div>
   <ul class="fab-options" id="fab-options">
     <li>
-      <a href="https://wa.me/60193718243" target="_blank" title="WhatsApp">
-        <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
+      <a href="tel:+60388709279" title="Telefon">
+        <i class="fas fa-phone" style="color:#007bff;"></i>
       </a>
     </li>
     <li>
       <a href="mailto:sulhjksm@esyariah.gov.my" title="Emel">
         <i class="fas fa-envelope" style="color:#d93025;"></i>
-      </a>
-    </li>
-    <li>
-      <a href="tel:+60388709279" title="Telefon">
-        <i class="fas fa-phone" style="color:#007bff;"></i>
       </a>
     </li>
   </ul>

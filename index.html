@@ -1,4 +1,4 @@
-<!-- Font Awesome (via jsDelivr, lebih stabil untuk Google Sites) -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
 <style>
@@ -34,64 +34,4 @@
     padding: 0;
     position: absolute;
     bottom: 0;
-    right: 70px;
-    display: flex;
-    gap: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s, transform 0.3s;
-    transform: translateX(20px);
-  }
-
-  .fab-container.active .fab-options {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-  }
-
-  .fab-options li {
-    background: #ffffff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .fab-options li a {
-    font-size: 22px;
-    color: inherit;
-  }
-</style>
-
-<div class="fab-container" id="fab-container">
-  <!-- Ikon utama (hanya buka/tutup menu) -->
-  <div class="fab fab-icon-holder">
-    <i class="fa-solid fa-plus"></i>
-  </div>
-  <ul class="fab-options" id="fab-options">
-    <li>
-      <a href="https://wa.me/60193718243" target="_blank" title="WhatsApp">
-        <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
-      </a>
-    </li>
-    <li>
-      <a href="tel:+60388709279" title="Telefon">
-        <i class="fas fa-phone" style="color:#007bff;"></i>
-      </a>
-    </li>
-    <li>
-      <a href="mailto:sulhjksm@esyariah.gov.my" title="Emel">
-        <i class="fas fa-envelope" style="color:#d93025;"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-
-<script>
-  document.getElementById("fab-container").addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
-</script>
+    right: 70px; /

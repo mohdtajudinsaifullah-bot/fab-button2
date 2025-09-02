@@ -1,114 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAB Button</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body {
+    background: #ffffff !important;
+  }
 
-  <style>
-    body {
-      margin: 0;
-      background: #ffffff !important; /* putih background */
-      font-family: Arial, sans-serif;
-    }
+  .fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* pindahkan ke kanan */
+    z-index: 1000;
+  }
 
-    .fab-container {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 1000;
-    }
+  .fab {
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
 
-    .fab {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background: #25d366; /* hijau WhatsApp untuk butang utama */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 24px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+  .fab:hover {
+    transform: scale(1.1);
+  }
 
-    .fab:hover {
-      transform: scale(1.1);
-    }
+  .fab-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    right: 70px; /* arah kiri dari butang utama */
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateX(20px);
+  }
 
-    .fab-options {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      right: 70px; /* keluar ke kiri */
-      bottom: 5px;
-      display: none;
-      flex-direction: row-reverse; /* ikon susun kiri */
-      gap: 10px;
-      background: #ffffff !important;
-      border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
+  .fab-container.active .fab-options {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
 
-    .fab-options li a {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: #333;
-      text-decoration: none;
-      box-shadow: 0 3px 5px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
+  .fab-options li {
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
 
-    .fab-options li a:hover {
-      background: #f0f0f0;
-    }
-  </style>
-</head>
-<body>
-  <div class="fab-container">
-    <!-- Butang utama (ikon telefon) -->
-    <div class="fab" id="fab-main">
-      <i class="fas fa-phone"></i>
-    </div>
+  .fab-options li a {
+    font-size: 20px;
+    color: inherit;
+  }
+</style>
 
-    <!-- Pilihan ikon -->
-    <ul class="fab-options" id="fab-options">
-      <li>
-        <a href="https://wa.me/60193718243" target="_blank" title="WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="tel:+60388709279" title="Telefon">
-          <i class="fas fa-phone" style="color:#007bff;"></i>
-        </a>
-      </li>
-      <li>
-        <a href="mailto:sulhjksm@esyariah.gov.my" title="Emel">
-          <i class="fas fa-envelope" style="color:#d93025;"></i>
-        </a>
-      </li>
-    </ul>
+<div class="fab-container" id="fab-container">
+  <div class="fab fab-icon-holder">
+    <i class="fas fa-phone"></i>
   </div>
+  <ul class="fab-options" id="fab-options">
+    <li>
+      <a href="https://wa.me/60193718243" target="_blank" title="WhatsApp">
+        <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:sulhjksm@esyariah.gov.my" title="Emel">
+        <i class="fas fa-envelope" style="color:#d93025;"></i>
+      </a>
+    </li>
+    <li>
+      <a href="tel:+60388709279" title="Telefon">
+        <i class="fas fa-phone" style="color:#007bff;"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 
-  <script>
-    const fabMain = document.getElementById('fab-main');
-    const fabOptions = document.getElementById('fab-options');
-
-    fabMain.addEventListener('click', () => {
-      fabOptions.style.display = fabOptions.style.display === 'flex' ? 'none' : 'flex';
-    });
-  </script>
-</body>
-</html>
+<script>
+  document.getElementById("fab-container").addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+</script>

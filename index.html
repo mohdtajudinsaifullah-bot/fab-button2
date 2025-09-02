@@ -1,11 +1,11 @@
-<!-- Font Awesome (via jsDelivr, lebih stabil untuk Google Sites) -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
 <style>
   .fab-container {
     position: fixed;
     bottom: 20px;
-    right: 20px; /* ikon utama di kanan bawah */
+    right: 20px;
     z-index: 1000;
   }
 
@@ -34,7 +34,7 @@
     padding: 0;
     position: absolute;
     bottom: 0;
-    right: 70px; /* keluar arah kiri */
+    right: 70px;
     display: flex;
     gap: 10px;
     opacity: 0;
@@ -67,10 +67,16 @@
 </style>
 
 <div class="fab-container" id="fab-container">
+  <!-- Ikon utama (hanya buka/tutup menu) -->
   <div class="fab fab-icon-holder">
-    <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-solid fa-plus"></i>
   </div>
   <ul class="fab-options" id="fab-options">
+    <li>
+      <a href="https://wa.me/60193718243" target="_blank" title="WhatsApp">
+        <i class="fa-brands fa-whatsapp" style="color:#25d366;"></i>
+      </a>
+    </li>
     <li>
       <a href="tel:+60388709279" title="Telefon">
         <i class="fas fa-phone" style="color:#007bff;"></i>
